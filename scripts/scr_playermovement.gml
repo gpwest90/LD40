@@ -43,3 +43,5 @@ y += moveY;
 
 x = clamp(x, 0, room_width - argument4.sprite_width);
 y = clamp(y, 0, room_height - argument4.sprite_height);
+
+//TEST
