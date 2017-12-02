@@ -16,6 +16,7 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_playermovement.gml</script>
+    <script>scripts\scr_is_on_left_side.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_score</font>
