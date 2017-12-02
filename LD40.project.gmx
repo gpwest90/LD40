@@ -21,7 +21,7 @@
     <script>scripts\scr_get_show_time.gml</script>
     <script>scripts\scr_clamp_into_arena.gml</script>
     <script>scripts\scr_create_and_bind_fixture.gml</script>
-    <script>scripts\scr_change_restitution.gml</script>
+    <script>scripts\scr_change_movement.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_score</font>
