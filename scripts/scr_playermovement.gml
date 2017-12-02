@@ -16,6 +16,7 @@ moveY = (input_down - input_up) * spd;
 //---------------COLLISION CHECKS
 
 // Horizontal
+/*
 if (moveX != 0) {
     if (place_meeting(x + moveX, y, obj_ball)) {
         repeat(abs(moveX)) {
@@ -35,13 +36,27 @@ if (moveY != 0) {
         }
         moveY = 0;
     }
-}
+}*/
     
 //---------------APPLY MOVEMENT   
+/*
 x += moveX;
 y += moveY;
+*/
 
-x = clamp(x, 0, room_width - argument4.sprite_width);
-y = clamp(y, 0, room_height - argument4.sprite_height);
+
+
+physics_apply_force(phy_position_x, phy_position_y, moveX, moveY);
+if (phy_position_x < 0 - argument4.sprite_width / 2) {
+  phy_speed_x = abs(phy_speed_x) * .8;
+} else if (phy_position_x > room_width + argument4.sprite_width / 2) {
+  phy_speed_x = abs(phy_speed_x) * -.8;
+}
+
+if (phy_position_y < 0 - argument4.sprite_height / 2) {
+  phy_speed_y = abs(phy_speed_y) * .8;
+} else if (phy_position_y > room_height + argument4.sprite_height / 2) {
+  phy_speed_y = abs(phy_speed_y) * -.8;
+}
 
 //TEST
