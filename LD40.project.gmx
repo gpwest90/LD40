@@ -17,10 +17,14 @@
   <scripts name="scripts">
     <script>scripts\scr_playermovement.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_score</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_player1</object>
     <object>objects\obj_player2</object>
     <object>objects\obj_ball</object>
+    <object>objects\obj_gamecontroller</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_arena</room>
