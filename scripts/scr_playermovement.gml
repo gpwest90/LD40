@@ -15,48 +15,15 @@ moveY = (input_down - input_up) * spd;
 
 //---------------COLLISION CHECKS
 
-// Horizontal
-/*
-if (moveX != 0) {
-    if (place_meeting(x + moveX, y, obj_ball)) {
-        repeat(abs(moveX)) {
-            if (!place_meeting(x + sign(moveX), y, obj_ball)) { x += sign(moveX); } 
-            else { break; }
-        }
-        moveX = 0;
-    }
-}
 
-// Vertical
-if (moveY != 0) {
-    if (place_meeting(x, y + moveY, obj_ball)) {
-        repeat(abs(moveY)) {
-            if (!place_meeting(x, y + sign(moveY), obj_ball)) { y += sign(moveY); } 
-            else { break; }
-        }
-        moveY = 0;
-    }
-}*/
-    
-//---------------APPLY MOVEMENT   
-/*
-x += moveX;
-y += moveY;
-*/
-
-
-
+//---------------APPLY MOVEMENT
 physics_apply_force(phy_position_x, phy_position_y, moveX, moveY);
-if (phy_position_x < 0 - argument4.sprite_width / 2) {
-  phy_speed_x = abs(phy_speed_x) * .8;
-} else if (phy_position_x > room_width + argument4.sprite_width / 2) {
-  phy_speed_x = abs(phy_speed_x) * -.8;
+
+if (phy_speed > max_spd) {
+  phy_speed_x = phy_speed_x * max_spd / phy_speed;
+  phy_speed_y = phy_speed_y * max_spd / phy_speed;
 }
 
-if (phy_position_y < 0 - argument4.sprite_height / 2) {
-  phy_speed_y = abs(phy_speed_y) * .8;
-} else if (phy_position_y > room_height + argument4.sprite_height / 2) {
-  phy_speed_y = abs(phy_speed_y) * -.8;
-}
+script_execute(scr_clamp_into_arena, argument4);
 
 //TEST
