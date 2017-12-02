@@ -60,21 +60,33 @@ if (match_time &gt; 0) {
     room_goto(rm_game_over);
 }
 
-//-------------------SCORE CALCULATION
-var new_left_score = 0;
-var new_right_score = 0;
+//-------------------BALL POSITION CALCULATION
+var balls_on_left = 0;
+var balls_on_right = 0;
 
 with (obj_ball) {
   is_on_left = script_execute(scr_is_on_left_side)
   if is_on_left {
-    new_left_score ++;
+    balls_on_left ++;
   } else { 
-    new_right_score ++;
+    balls_on_right ++;
   }
 }
 
-global.left_team_score = new_left_score;
-global.right_team_score = new_right_score;
+//-------------------SCORE CALCULATION
+global.left_team_score = balls_on_left;
+global.right_team_score = balls_on_right;
+
+//-------------------THE MORE YOU HAVE THE WORSE IT IS
+
+//For each player1 (team1) pass in that instance's fixture and difference of balls on their side
+with (obj_player1) {
+  script_execute(scr_change_restitution, balls_on_left - balls_on_right);
+}
+with (obj_player2) {
+  script_execute(scr_change_restitution, balls_on_right - balls_on_left);
+}
+
 </string>
           </argument>
         </arguments>
