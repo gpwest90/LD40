@@ -83,10 +83,10 @@ global.right_team_score += balls_on_right * delta_time/1000000;
 
 //For each player1 (team1) pass in that instance's fixture and difference of balls on their side
 with (obj_player1) {
-  script_execute(scr_change_restitution, balls_on_left - balls_on_right);
+  script_execute(scr_change_movement, balls_on_left - balls_on_right);
 }
 with (obj_player2) {
-  script_execute(scr_change_restitution, balls_on_right - balls_on_left);
+  script_execute(scr_change_movement, balls_on_right - balls_on_left);
 }
 
 </string>
