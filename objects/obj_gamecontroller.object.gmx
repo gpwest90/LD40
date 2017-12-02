@@ -67,8 +67,10 @@ var balls_on_right = 0;
 with (obj_ball) {
   is_on_left = script_execute(scr_is_on_left_side)
   if is_on_left {
+    image_blend = c_red;
     balls_on_left ++;
-  } else { 
+  } else {
+    image_blend = c_blue; 
     balls_on_right ++;
   }
 }
