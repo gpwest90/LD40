@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>global.left_team_score = 0;
 global.right_team_score = 0;
+match_time = 120.0;
+
+
 </string>
           </argument>
         </arguments>
@@ -49,8 +52,18 @@ global.right_team_score = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var new_left_score = 0;
+            <string>//-------------------GAME TIMER
+if (match_time &gt; 0) {
+    match_time -= delta_time/1000000;
+} else {
+    match_time = 0;
+    room_goto(rm_game_over);
+}
+
+//-------------------SCORE CALCULATION
+var new_left_score = 0;
 var new_right_score = 0;
+
 with (obj_ball) {
   is_on_left = script_execute(scr_is_on_left_side)
   if is_on_left {
@@ -85,12 +98,17 @@ global.right_team_score = new_right_score;
           <argument>
             <kind>1</kind>
             <string>draw_set_font(fnt_score);
-draw_set_colour(c_red);
+draw_set_halign(fa_center);
 
+draw_set_colour(c_red);
 draw_text((room_width * 0.25), (room_height * 0.1), string(global.left_team_score));
 
 draw_set_colour(c_blue);
 draw_text((room_width * 0.75), (room_height * 0.1), string(global.right_team_score));
+
+
+draw_set_colour(c_purple);
+draw_text((room_width * 0.50), (room_height * 0.1), script_execute(scr_get_show_time));
 
 </string>
           </argument>

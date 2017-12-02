@@ -12,11 +12,13 @@
   </sprites>
   <backgrounds name="background">
     <background>background\bg_arena</background>
+    <background>background\bg_game_over</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\scr_playermovement.gml</script>
     <script>scripts\scr_is_on_left_side.gml</script>
+    <script>scripts\scr_get_show_time.gml</script>
     <script>scripts\scr_clamp_into_arena.gml</script>
   </scripts>
   <fonts name="fonts">
@@ -30,6 +32,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_arena</room>
+    <room>rooms\rm_game_over</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
