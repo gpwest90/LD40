@@ -24,6 +24,8 @@
     <script>scripts\scr_create_and_bind_fixture.gml</script>
     <script>scripts\scr_change_movement.gml</script>
     <script>scripts\scr_create_and_bind_box_fixture.gml</script>
+    <script>scripts\scr_get_keyboard_input.gml</script>
+    <script>scripts\scr_get_ai_input.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_score</font>
