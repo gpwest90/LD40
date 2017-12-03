@@ -10,10 +10,10 @@
     <sprite>sprites\spr_player2</sprite>
     <sprite>sprites\spr_ball</sprite>
     <sprite>sprites\spr_score_circle</sprite>
+    <sprite>sprites\spr_pause</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_arena</background>
-    <background>background\bg_game_over</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -34,6 +34,8 @@
     <object>objects\obj_ball</object>
     <object>objects\obj_gamecontroller</object>
     <object>objects\obj_score_circle</object>
+    <object>objects\obj_pause</object>
+    <object>objects\obj_game_over</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_arena</room>
