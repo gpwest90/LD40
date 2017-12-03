@@ -33,12 +33,7 @@ input_right  = keyboard_check(ord('D'));
 spd = 300;
 max_spd = 6;
 
-image_xscale = 2;
-image_yscale = image_xscale;
-
-var density = (0.1 / 4);
-
-script_execute(scr_create_and_bind_box_fixture, density, 0.1, 0, 5, 0.1, 0.1, true);
+script_execute(scr_create_and_bind_box_fixture, 0.1, 0.1, 0, 5, 0.1, 0.1, true);
 
 </string>
           </argument>
