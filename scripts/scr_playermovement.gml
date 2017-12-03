@@ -1,9 +1,9 @@
 //---------------UPDATE INPUT
-input_up    = keyboard_check(argument0);
-input_down  = keyboard_check(argument1);
-input_left  = keyboard_check(argument2);
-input_right  = keyboard_check(argument3);
-
+if (is_ai) {
+  script_execute(scr_get_ai_input, argument5);
+} else {
+  script_execute(scr_get_keyboard_input, argument0, argument1, argument2, argument3);
+}
 
 //---------------RESET MOVE VARIABLES
 moveX = 0;

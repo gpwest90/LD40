@@ -30,6 +30,7 @@ input_down  = keyboard_check(ord('S'));
 input_left  = keyboard_check(ord('A'));
 input_right  = keyboard_check(ord('D'));
 
+is_ai = false;
 spd = 300;
 max_spd = 6;
 
@@ -57,7 +58,7 @@ script_execute(scr_create_and_bind_box_fixture, 0.1, 0.1, 0, 5, 0.1, 0.1, true);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>script_execute(scr_playermovement, ord('W'), ord('S'), ord('A'), ord('D'), spr_player1);
+            <string>script_execute(scr_playermovement, ord('W'), ord('S'), ord('A'), ord('D'), spr_player1, c_red);
 
 </string>
           </argument>
