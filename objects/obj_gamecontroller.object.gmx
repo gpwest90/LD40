@@ -29,7 +29,7 @@
 global.left_team_score = 0;
 global.right_team_score = 0;
 global.pause_time = "";
-match_time = 10.0;
+match_time = 30.0;
 
 
 
