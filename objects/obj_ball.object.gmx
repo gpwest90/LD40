@@ -60,6 +60,7 @@ script_execute(scr_create_and_bind_fixture, 16, 0.02, 0.1, 0, 0.1, 0.01, 0.2, fa
           <argument>
             <kind>1</kind>
             <string>script_execute(scr_clamp_into_arena, spr_ball);
+script_execute(scr_is_in_score_circle);
 
 </string>
           </argument>

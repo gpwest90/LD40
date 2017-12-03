@@ -25,5 +25,3 @@ if (phy_speed > max_spd) {
 }
 
 script_execute(scr_clamp_into_arena, argument4);
-
-//TEST

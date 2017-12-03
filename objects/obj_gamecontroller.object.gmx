@@ -61,32 +61,30 @@ if (match_time &gt; 0) {
 }
 
 //-------------------BALL POSITION CALCULATION
-var balls_on_left = 0;
-var balls_on_right = 0;
+var balls_in_left_goal = 0;
+var balls_in_right_goal = 0;
+
 
 with (obj_ball) {
-  is_on_left = script_execute(scr_is_on_left_side)
-  if is_on_left {
-    image_blend = c_red;
-    balls_on_left ++;
-  } else {
-    image_blend = c_blue; 
-    balls_on_right ++;
+  if (image_blend == c_red) {
+    balls_in_left_goal ++;
+  } else if (image_blend == c_blue) { 
+    balls_in_right_goal ++;
   }
 }
 
 //-------------------SCORE CALCULATION
-global.left_team_score += balls_on_left * delta_time/1000000;
-global.right_team_score += balls_on_right * delta_time/1000000;
+global.left_team_score += balls_in_left_goal * delta_time/1000000;
+global.right_team_score += balls_in_right_goal * delta_time/1000000;
 
 //-------------------THE MORE YOU HAVE THE WORSE IT IS
 
 //For each player1 (team1) pass in that instance's fixture and difference of balls on their side
 with (obj_player1) {
-  script_execute(scr_change_movement, balls_on_left - balls_on_right);
+  script_execute(scr_change_movement, balls_in_left_goal);
 }
 with (obj_player2) {
-  script_execute(scr_change_movement, balls_on_right - balls_on_left);
+  script_execute(scr_change_movement, balls_in_right_goal);
 }
 
 </string>
