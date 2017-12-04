@@ -30,7 +30,7 @@ input_down  = keyboard_check(ord('S'));
 input_left  = keyboard_check(ord('A'));
 input_right  = keyboard_check(ord('D'));
 
-is_ai = false;
+is_ai = global.left_player_is_ai;
 spd = 300;
 max_spd = 6;
 last_target = noone;
