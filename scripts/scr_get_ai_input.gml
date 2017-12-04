@@ -9,12 +9,12 @@ var target_y = y;
 var current_target = last_target;
 
 // If there is a current_target and that current_target is no longer a concer (not in circle), forget that target
-if (!current_target != undefined && current_target.image_blend != argument0) {
-  current_target = undefined;
+if (current_target != noone && current_target.image_blend != argument0) {
+  current_target = noone;
 }
 
 //Set target as the first ball in its circle
-if (current_target == undefined) {
+if (current_target == noone) {
   with (obj_ball) {
     if (image_blend == argument0) {
       current_target = id;
@@ -27,7 +27,7 @@ if (current_target == undefined) {
 last_target = current_target;
 
 // If we have a target, set the x/y coorinates we want the ai to move to
-if (last_target != undefined) {
+if (last_target != noone) {
 
   //Set the coordinates to the target object's location
   target_x = last_target.x;
